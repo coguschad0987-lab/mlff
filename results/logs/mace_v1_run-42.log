@@ -1,0 +1,78 @@
+2026-08-29 09:41:59.036 INFO: ===========VERIFYING SETTINGS===========
+2026-08-29 09:41:59.036 INFO: MACE version: 0.3.16
+2026-08-29 09:41:59.036 INFO: Using CPU
+2026-08-29 09:41:59.147 INFO: Using foundation model models/mace_mp_small_float32.model as initial checkpoint.
+2026-08-29 09:41:59.147 INFO: ===========LOADING INPUT DATA===========
+2026-08-29 09:41:59.147 INFO: Using heads: ['Default']
+2026-08-29 09:41:59.147 INFO: Using the key specifications to parse data:
+2026-08-29 09:41:59.147 INFO: Default: KeySpecification(info_keys={'energy': 'energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'polarizability': 'polarizability', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'forces', 'charges': 'REF_charges'})
+2026-08-29 09:41:59.147 INFO: =============    Processing head Default     ===========
+2026-08-29 09:42:01.074 WARNING: Since ASE version 3.23.0b1, using energy_key 'energy' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'energy' to 'REF_energy'. You need to use --energy_key='REF_energy' to specify the chosen key name.
+2026-08-29 09:42:01.627 WARNING: Since ASE version 3.23.0b1, using forces_key 'forces' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'forces' to 'REF_forces'. You need to use --forces_key='REF_forces' to specify the chosen key name.
+2026-08-29 09:42:02.355 INFO: Training set 1/1 [energy: 17992, stress: 0, virials: 0, dipole components: 0, head: 17992, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 17992, charges: 0]
+2026-08-29 09:42:02.379 INFO: Total Training set [energy: 17992, stress: 0, virials: 0, dipole components: 0, head: 17992, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 17992, charges: 0]
+2026-08-29 09:42:02.861 WARNING: Since ASE version 3.23.0b1, using energy_key 'energy' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'energy' to 'REF_energy'. You need to use --energy_key='REF_energy' to specify the chosen key name.
+2026-08-29 09:42:03.001 WARNING: Since ASE version 3.23.0b1, using forces_key 'forces' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'forces' to 'REF_forces'. You need to use --forces_key='REF_forces' to specify the chosen key name.
+2026-08-29 09:42:03.184 INFO: Validation set 1/1 [energy: 4518, stress: 0, virials: 0, dipole components: 0, head: 4518, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 4518, charges: 0]
+2026-08-29 09:42:03.189 INFO: Total Validation set [energy: 4518, stress: 0, virials: 0, dipole components: 0, head: 4518, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 4518, charges: 0]
+2026-08-29 09:42:03.190 INFO: Total number of configurations: train=17992, valid=4518, tests=[],
+2026-08-29 09:42:03.236 INFO: Atomic Numbers used: [np.int64(7), np.int64(14)]
+2026-08-29 09:42:03.236 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2026-08-29 09:42:03.236 INFO: Computing average Atomic Energies using least squares regression
+2026-08-29 09:42:03.252 INFO: Atomic Energies used (z: eV) for head Default: {7: -8.95485919380261, 14: -5.003222085317031}
+2026-08-29 09:42:03.252 INFO: Processing datasets for head 'Default'
+2026-08-29 09:42:16.155 INFO: Combining 1 list datasets for head 'Default'
+2026-08-29 09:42:19.255 INFO: Combining 1 list datasets for head 'Default_valid'
+2026-08-29 09:42:19.255 INFO: Combined validation datasets for Default
+2026-08-29 09:42:19.255 INFO: Head 'Default' training dataset size: 17992
+2026-08-29 09:42:19.255 INFO: Computing average number of neighbors
+2026-08-29 09:42:23.030 INFO: Average number of neighbors: 70.03617095947266
+2026-08-29 09:42:23.030 INFO: During training the following quantities will be reported: energy, forces
+2026-08-29 09:42:23.030 INFO: ===========MODEL DETAILS===========
+2026-08-29 09:42:25.240 INFO: Loading FOUNDATION model
+2026-08-29 09:42:25.241 INFO: Using filtered elements: [np.int64(7), np.int64(14)]
+2026-08-29 09:42:25.241 INFO: Model configuration extracted from foundation model
+2026-08-29 09:42:25.241 INFO: Using weighted loss function for fine-tuning
+2026-08-29 09:42:25.241 INFO: Message passing with hidden irreps 128x0e)
+2026-08-29 09:42:25.241 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2026-08-29 09:42:25.241 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2026-08-29 09:42:25.241 INFO: Distance transform for radial basis functions: None
+2026-08-29 09:42:25.638 INFO: ===========OPTIMIZER INFORMATION===========
+2026-08-29 09:42:25.639 INFO: Using ADAM as parameter optimizer
+2026-08-29 09:42:25.639 INFO: Batch size: 4
+2026-08-29 09:42:25.639 INFO: Using Exponential Moving Average with decay: 0.99
+2026-08-29 09:42:25.639 INFO: Number of gradient updates: 4498
+2026-08-29 09:42:25.639 INFO: Learning rate: 0.01, weight decay: 5e-07
+2026-08-29 09:42:25.639 INFO: WeightedEnergyForcesLoss(energy_weight=1.000, forces_weight=100.000)
+2026-08-29 09:42:25.639 INFO: === Layer's learning rates ===
+2026-08-29 09:42:25.639 INFO: Param group 0: lr = 0.01
+2026-08-29 09:42:25.639 INFO: Param group 1: lr = 0.01
+2026-08-29 09:42:25.639 INFO: Param group 2: lr = 0.01
+2026-08-29 09:42:25.639 INFO: Param group 3: lr = 0.01
+2026-08-29 09:42:25.639 INFO: Param group 4: lr = 0.01
+2026-08-29 09:42:25.639 INFO: Using gradient clipping with tolerance=10.000
+2026-08-29 09:42:25.639 INFO: 
+2026-08-29 09:42:25.639 INFO: ===========TRAINING===========
+2026-08-29 09:42:25.639 INFO: Started training, reporting errors on validation set
+2026-08-29 09:42:25.639 INFO: Loss metrics on validation set
+2026-08-29 09:45:50.068 INFO: Initial: head: Default, loss=2.53877187, RMSE_E_per_atom=  923.40 meV, RMSE_F=  548.82 meV / A
+2026-08-29 10:47:59.709 INFO: Epoch 0: head: Default, loss=87.16020966, RMSE_E_per_atom=   53.69 meV, RMSE_F= 2841.38 meV / A
+2026-08-29 10:47:59.790 INFO: Training complete
+2026-08-29 10:47:59.792 INFO: 
+2026-08-29 10:47:59.792 INFO: ===========RESULTS===========
+2026-08-29 10:47:59.806 INFO: Loading checkpoint: models/checkpoints/mace_v1_run-42_epoch-0.pt
+2026-08-29 10:47:59.834 INFO: Loaded Stage one model from epoch 0 for evaluation
+2026-08-29 10:47:59.834 INFO: Saving model to models/checkpoints/mace_v1_run-42.model
+2026-08-29 10:47:59.969 INFO: Compiling model, saving metadata to models/mace_v1_compiled.model
+2026-08-29 10:48:00.378 INFO: Computing metrics for training, validation, and test sets
+2026-08-29 10:48:00.378 INFO: Skipping evaluation for heads: ['pt_head']
+2026-08-29 10:48:00.385 INFO: Evaluating train_Default ...
+2026-08-29 11:08:30.572 INFO: Evaluating valid_Default ...
+2026-08-29 11:13:50.907 INFO: Error-table on TRAIN and VALID:
++---------------+---------------------+------------------+-------------------+
+|  config_type  | RMSE E / meV / atom | RMSE F / meV / A | relative F RMSE % |
++---------------+---------------------+------------------+-------------------+
+| train_Default |           53.3      |       3314.3     |        166.64     |
+| valid_Default |           53.7      |       2841.4     |        144.38     |
++---------------+---------------------+------------------+-------------------+
+2026-08-29 11:41:33.883 INFO: Done

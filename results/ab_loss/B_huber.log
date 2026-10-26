@@ -1,0 +1,121 @@
+/Users/immack2/mlff-project/.venv/lib/python3.11/site-packages/e3nn/o3/_wigner.py:10: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+2026-08-29 20:47:23.998 INFO: ===========VERIFYING SETTINGS===========
+2026-08-29 20:47:23.998 INFO: MACE version: 0.3.16
+2026-08-29 20:47:23.998 INFO: Using CPU
+/Users/immack2/mlff-project/.venv/lib/python3.11/site-packages/mace/cli/run_train.py:181: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  model_foundation = torch.load(
+2026-08-29 20:47:24.118 INFO: Using foundation model models/mace_mp_small_float32.model as initial checkpoint.
+2026-08-29 20:47:24.118 INFO: ===========LOADING INPUT DATA===========
+2026-08-29 20:47:24.118 INFO: Using heads: ['Default']
+2026-08-29 20:47:24.118 INFO: Using the key specifications to parse data:
+2026-08-29 20:47:24.118 INFO: Default: KeySpecification(info_keys={'energy': 'energy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'polarizability': 'polarizability', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'forces', 'charges': 'REF_charges'})
+2026-08-29 20:47:24.118 INFO: =============    Processing head Default     ===========
+2026-08-29 20:47:24.339 WARNING: Since ASE version 3.23.0b1, using energy_key 'energy' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'energy' to 'REF_energy'. You need to use --energy_key='REF_energy' to specify the chosen key name.
+2026-08-29 20:47:24.400 WARNING: Since ASE version 3.23.0b1, using forces_key 'forces' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'forces' to 'REF_forces'. You need to use --forces_key='REF_forces' to specify the chosen key name.
+2026-08-29 20:47:24.480 INFO: Training set 1/1 [energy: 1997, stress: 0, virials: 0, dipole components: 0, head: 1997, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 1997, charges: 0]
+2026-08-29 20:47:24.482 INFO: Total Training set [energy: 1997, stress: 0, virials: 0, dipole components: 0, head: 1997, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 1997, charges: 0]
+2026-08-29 20:47:24.577 WARNING: Since ASE version 3.23.0b1, using energy_key 'energy' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'energy' to 'REF_energy'. You need to use --energy_key='REF_energy' to specify the chosen key name.
+2026-08-29 20:47:24.602 WARNING: Since ASE version 3.23.0b1, using forces_key 'forces' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'forces' to 'REF_forces'. You need to use --forces_key='REF_forces' to specify the chosen key name.
+2026-08-29 20:47:24.634 INFO: Validation set 1/1 [energy: 801, stress: 0, virials: 0, dipole components: 0, head: 801, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 801, charges: 0]
+2026-08-29 20:47:24.635 INFO: Total Validation set [energy: 801, stress: 0, virials: 0, dipole components: 0, head: 801, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 801, charges: 0]
+2026-08-29 20:47:24.635 INFO: Total number of configurations: train=1997, valid=801, tests=[],
+2026-08-29 20:47:24.641 INFO: Atomic Numbers used: [np.int64(7), np.int64(14)]
+2026-08-29 20:47:24.641 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2026-08-29 20:47:24.641 INFO: Computing average Atomic Energies using least squares regression
+2026-08-29 20:47:24.643 INFO: Atomic Energies used (z: eV) for head Default: {7: -8.903437650337402, 14: -5.031647470817362}
+2026-08-29 20:47:24.643 INFO: Processing datasets for head 'Default'
+2026-08-29 20:47:26.078 INFO: Combining 1 list datasets for head 'Default'
+2026-08-29 20:47:26.669 INFO: Combining 1 list datasets for head 'Default_valid'
+2026-08-29 20:47:26.669 INFO: Combined validation datasets for Default
+2026-08-29 20:47:26.669 INFO: Head 'Default' training dataset size: 1997
+2026-08-29 20:47:26.669 INFO: Computing average number of neighbors
+/Users/immack2/mlff-project/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:759: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, device pinned memory won't be used.
+  super().__init__(loader)
+2026-08-29 20:47:27.062 INFO: Average number of neighbors: 69.95130920410156
+2026-08-29 20:47:27.062 INFO: During training the following quantities will be reported: energy, forces, stress
+2026-08-29 20:47:27.062 INFO: ===========MODEL DETAILS===========
+2026-08-29 20:47:27.312 INFO: Loading FOUNDATION model
+2026-08-29 20:47:27.312 INFO: Using filtered elements: [np.int64(7), np.int64(14)]
+2026-08-29 20:47:27.312 INFO: Model configuration extracted from foundation model
+2026-08-29 20:47:27.312 INFO: Using huber loss function for fine-tuning
+2026-08-29 20:47:27.312 INFO: Message passing with hidden irreps 128x0e)
+2026-08-29 20:47:27.312 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2026-08-29 20:47:27.312 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2026-08-29 20:47:27.312 INFO: Distance transform for radial basis functions: None
+/opt/homebrew/Cellar/python@3.11/3.11.16/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py:418: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  return visitor(node)
+/opt/homebrew/Cellar/python@3.11/3.11.16/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py:418: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  return visitor(node)
+/opt/homebrew/Cellar/python@3.11/3.11.16/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py:418: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  return visitor(node)
+/opt/homebrew/Cellar/python@3.11/3.11.16/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py:418: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  return visitor(node)
+/opt/homebrew/Cellar/python@3.11/3.11.16/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py:418: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  return visitor(node)
+/opt/homebrew/Cellar/python@3.11/3.11.16/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py:418: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  return visitor(node)
+/opt/homebrew/Cellar/python@3.11/3.11.16/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py:418: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  return visitor(node)
+/opt/homebrew/Cellar/python@3.11/3.11.16/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py:418: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  return visitor(node)
+/opt/homebrew/Cellar/python@3.11/3.11.16/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py:418: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  return visitor(node)
+/opt/homebrew/Cellar/python@3.11/3.11.16/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py:418: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  return visitor(node)
+/opt/homebrew/Cellar/python@3.11/3.11.16/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py:418: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  return visitor(node)
+/opt/homebrew/Cellar/python@3.11/3.11.16/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py:418: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  return visitor(node)
+/opt/homebrew/Cellar/python@3.11/3.11.16/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py:418: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  return visitor(node)
+/opt/homebrew/Cellar/python@3.11/3.11.16/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ast.py:418: UserWarning: The TorchScript type system doesn't support instance-level annotations on empty non-base types in `__init__`. Instead, either 1) use a type annotation in the class body, or 2) wrap the type in `torch.jit.Attribute`.
+  return visitor(node)
+2026-08-29 20:47:27.631 INFO: ===========OPTIMIZER INFORMATION===========
+2026-08-29 20:47:27.631 INFO: Using ADAM as parameter optimizer
+2026-08-29 20:47:27.632 INFO: Batch size: 4
+2026-08-29 20:47:27.632 INFO: Using Exponential Moving Average with decay: 0.99
+2026-08-29 20:47:27.632 INFO: Number of gradient updates: 2496
+2026-08-29 20:47:27.632 INFO: Learning rate: 0.01, weight decay: 5e-07
+2026-08-29 20:47:27.632 INFO: WeightedHuberEnergyForcesStressLoss(energy_weight=1.000, forces_weight=100.000, stress_weight=1.000)
+2026-08-29 20:47:27.632 INFO: === Layer's learning rates ===
+2026-08-29 20:47:27.632 INFO: Param group 0: lr = 0.01
+2026-08-29 20:47:27.632 INFO: Param group 1: lr = 0.01
+2026-08-29 20:47:27.632 INFO: Param group 2: lr = 0.01
+2026-08-29 20:47:27.632 INFO: Param group 3: lr = 0.01
+2026-08-29 20:47:27.632 INFO: Param group 4: lr = 0.01
+2026-08-29 20:47:27.632 INFO: Using gradient clipping with tolerance=10.000
+2026-08-29 20:47:27.632 INFO: 
+2026-08-29 20:47:27.632 INFO: ===========TRAINING===========
+2026-08-29 20:47:27.632 INFO: Started training, reporting errors on validation set
+2026-08-29 20:47:27.632 INFO: Loss metrics on validation set
+/Users/immack2/mlff-project/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:759: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, device pinned memory won't be used.
+  super().__init__(loader)
+2026-08-29 20:48:07.093 INFO: Initial: head: Default, loss=0.03525172, RMSE_E_per_atom=  922.64 meV, RMSE_F=  517.98 meV / A, RMSE_stress=None meV / A^3
+2026-08-29 20:54:26.301 INFO: Epoch 0: head: Default, loss=0.02477594, RMSE_E_per_atom=  152.48 meV, RMSE_F= 1143.26 meV / A, RMSE_stress=None meV / A^3
+2026-08-29 21:02:15.656 INFO: Epoch 1: head: Default, loss=0.02310916, RMSE_E_per_atom=  155.99 meV, RMSE_F=  535.15 meV / A, RMSE_stress=None meV / A^3
+2026-08-29 21:11:31.950 INFO: Epoch 2: head: Default, loss=0.02136771, RMSE_E_per_atom=  159.27 meV, RMSE_F=  449.23 meV / A, RMSE_stress=None meV / A^3
+2026-08-29 21:19:48.231 INFO: Epoch 3: head: Default, loss=0.02146278, RMSE_E_per_atom=  110.40 meV, RMSE_F=  600.34 meV / A, RMSE_stress=None meV / A^3
+2026-08-29 21:28:59.810 INFO: Epoch 4: head: Default, loss=0.02056429, RMSE_E_per_atom=   87.79 meV, RMSE_F=  578.87 meV / A, RMSE_stress=None meV / A^3
+2026-08-29 21:28:59.856 INFO: Training complete
+2026-08-29 21:28:59.861 INFO: 
+2026-08-29 21:28:59.861 INFO: ===========RESULTS===========
+2026-08-29 21:28:59.876 INFO: Loading checkpoint: results/ab_loss/B_huber/checkpoints/B_huber_run-42_epoch-4.pt
+/Users/immack2/mlff-project/.venv/lib/python3.11/site-packages/mace/tools/checkpoint.py:187: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=checkpoint_info.path, map_location=device),
+2026-08-29 21:28:59.920 INFO: Loaded Stage one model from epoch 4 for evaluation
+2026-08-29 21:28:59.923 INFO: Saving model to results/ab_loss/B_huber/checkpoints/B_huber_run-42.model
+2026-08-29 21:29:00.103 INFO: Compiling model, saving metadata to results/ab_loss/B_huber/B_huber_compiled.model
+2026-08-29 21:29:00.738 INFO: Computing metrics for training, validation, and test sets
+2026-08-29 21:29:00.738 INFO: Skipping evaluation for heads: ['pt_head']
+2026-08-29 21:29:00.743 INFO: Evaluating train_Default ...
+2026-08-29 21:33:06.867 INFO: Evaluating valid_Default ...
+2026-08-29 21:35:11.574 INFO: Error-table on TRAIN and VALID:
++---------------+---------------------+------------------+-------------------+---------------------------------------+
+|  config_type  | RMSE E / meV / atom | RMSE F / meV / A | relative F RMSE % | RMSE Stress (Virials) / meV / A (A^3) |
++---------------+---------------------+------------------+-------------------+---------------------------------------+
+| train_Default |           90.8      |        844.5     |         40.61     |                  None                 |
+| valid_Default |           87.8      |        578.9     |         29.40     |                  None                 |
++---------------+---------------------+------------------+-------------------+---------------------------------------+
+2026-08-29 21:42:00.410 INFO: Done
